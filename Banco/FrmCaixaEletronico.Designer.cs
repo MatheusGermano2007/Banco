@@ -38,9 +38,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numValorDeposito = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblLimiteCredito = new System.Windows.Forms.Label();
+            this.numLimiCred = new System.Windows.Forms.NumericUpDown();
+            this.lblSaldoComLimi = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numValorSaque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numValorDeposito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLimiCred)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSacar
@@ -57,7 +61,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(317, 67);
+            this.label.Location = new System.Drawing.Point(368, 76);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(54, 20);
             this.label.TabIndex = 1;
@@ -77,7 +81,7 @@
             // 
             this.lblSaldo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldo.Location = new System.Drawing.Point(405, 55);
+            this.lblSaldo.Location = new System.Drawing.Point(468, 67);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(177, 39);
             this.lblSaldo.TabIndex = 3;
@@ -98,7 +102,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(507, 264);
+            this.btnSair.Location = new System.Drawing.Point(614, 263);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 37);
             this.btnSair.TabIndex = 5;
@@ -120,7 +124,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 64);
+            this.label1.Location = new System.Drawing.Point(14, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 7;
@@ -128,7 +132,12 @@
             // 
             // numValorDeposito
             // 
-            this.numValorDeposito.Location = new System.Drawing.Point(153, 64);
+            this.numValorDeposito.Location = new System.Drawing.Point(153, 74);
+            this.numValorDeposito.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numValorDeposito.Name = "numValorDeposito";
             this.numValorDeposito.Size = new System.Drawing.Size(120, 20);
             this.numValorDeposito.TabIndex = 8;
@@ -138,29 +147,64 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 192);
+            this.label3.Location = new System.Drawing.Point(14, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "LimiteCredito:";
             // 
-            // lblLimiteCredito
+            // numLimiCred
             // 
-            this.lblLimiteCredito.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblLimiteCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLimiteCredito.Location = new System.Drawing.Point(149, 192);
-            this.lblLimiteCredito.Name = "lblLimiteCredito";
-            this.lblLimiteCredito.Size = new System.Drawing.Size(124, 20);
-            this.lblLimiteCredito.TabIndex = 10;
-            this.lblLimiteCredito.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.numLimiCred.Location = new System.Drawing.Point(153, 192);
+            this.numLimiCred.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numLimiCred.Name = "numLimiCred";
+            this.numLimiCred.Size = new System.Drawing.Size(120, 20);
+            this.numLimiCred.TabIndex = 11;
+            this.numLimiCred.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblSaldoComLimi
+            // 
+            this.lblSaldoComLimi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSaldoComLimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoComLimi.Location = new System.Drawing.Point(468, 145);
+            this.lblSaldoComLimi.Name = "lblSaldoComLimi";
+            this.lblSaldoComLimi.Size = new System.Drawing.Size(177, 39);
+            this.lblSaldoComLimi.TabIndex = 13;
+            this.lblSaldoComLimi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(334, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Saldo com limite:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(315, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 39);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Depositar limite";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmCaixaEletronico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(587, 308);
-            this.Controls.Add(this.lblLimiteCredito);
+            this.ClientSize = new System.Drawing.Size(701, 308);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblSaldoComLimi);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numLimiCred);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numValorDeposito);
             this.Controls.Add(this.label1);
@@ -175,6 +219,7 @@
             this.Text = "CaixaEletronico";
             ((System.ComponentModel.ISupportInitialize)(this.numValorSaque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numValorDeposito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numLimiCred)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,7 +237,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numValorDeposito;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblLimiteCredito;
+        private System.Windows.Forms.NumericUpDown numLimiCred;
+        private System.Windows.Forms.Label lblSaldoComLimi;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }
 
