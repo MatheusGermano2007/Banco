@@ -8,36 +8,35 @@ namespace Banco
 {
     public class Conta
     {
-        //definicao dos atributos internos de classe
+        //definição dos atributos internos de classe
         private Int32 numero;
         private decimal LimiteCredito;
         private decimal saldo;
+        private static int contadorConta = 0; // Adicionado campo estático
 
         public int Numero { get => numero; set => numero = value; }
         public decimal LimiteCredito1 { get => LimiteCredito; set => LimiteCredito = value; }
         public decimal Saldo { get => saldo; set => saldo = value; }
 
-
-        //criação dos metodos de classe
+        //criação dos métodos de classe
         public void Sacar(decimal valor)
         {
             contadorConta++;
             Saldo = Saldo - valor;
-            Console.WriteLine("Saque realizado com sucesso! Valor sacado: " + valor.ToString("C"));
+
+           if (Saldo + LimiteCredito < valor)
+            {
+                throw new Exception("Saldo insuficiente para realizar o saque. Verifique seu saldo e limite de crédito.");
+            }
+            Saldo = Saldo - valor;
+            
         }
         public void Depositar(decimal valor)
         {
             contadorConta++;
             Saldo = Saldo + valor;
-            Console.WriteLine("Depósito realizado com sucesso! Valor depositado: " + valor.ToString("C"));
-        }
-        public void sacar(decimal valor)
-        {
             
-                Sacar(valor);
         }
-
-
-
+      
     }
 }
