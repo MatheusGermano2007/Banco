@@ -39,9 +39,9 @@
             this.numValorDeposito = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.numLimiCred = new System.Windows.Forms.NumericUpDown();
-            this.lblSaldoComLimi = new System.Windows.Forms.Label();
+            this.lblSaldoComLimite = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDepositarLimite = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numValorSaque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numValorDeposito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLimiCred)).BeginInit();
@@ -49,7 +49,7 @@
             // 
             // btnSacar
             // 
-            this.btnSacar.Location = new System.Drawing.Point(18, 262);
+            this.btnSacar.Location = new System.Drawing.Point(342, 164);
             this.btnSacar.Name = "btnSacar";
             this.btnSacar.Size = new System.Drawing.Size(107, 39);
             this.btnSacar.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(368, 76);
+            this.label.Location = new System.Drawing.Point(25, 9);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(54, 20);
             this.label.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 127);
+            this.label2.Location = new System.Drawing.Point(25, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 20);
             this.label2.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.lblSaldo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldo.Location = new System.Drawing.Point(468, 67);
+            this.lblSaldo.Location = new System.Drawing.Point(25, 40);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(177, 39);
             this.lblSaldo.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             // numValorSaque
             // 
-            this.numValorSaque.Location = new System.Drawing.Point(153, 127);
+            this.numValorSaque.Location = new System.Drawing.Point(149, 175);
             this.numValorSaque.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -102,7 +102,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(614, 263);
+            this.btnSair.Location = new System.Drawing.Point(410, 303);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 37);
             this.btnSair.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             // btnDepositar
             // 
-            this.btnDepositar.Location = new System.Drawing.Point(166, 262);
+            this.btnDepositar.Location = new System.Drawing.Point(342, 119);
             this.btnDepositar.Name = "btnDepositar";
             this.btnDepositar.Size = new System.Drawing.Size(107, 39);
             this.btnDepositar.TabIndex = 6;
@@ -124,7 +124,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 74);
+            this.label1.Location = new System.Drawing.Point(25, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 7;
@@ -132,7 +132,7 @@
             // 
             // numValorDeposito
             // 
-            this.numValorDeposito.Location = new System.Drawing.Point(153, 74);
+            this.numValorDeposito.Location = new System.Drawing.Point(149, 130);
             this.numValorDeposito.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -147,7 +147,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 189);
+            this.label3.Location = new System.Drawing.Point(25, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 9;
@@ -155,7 +155,7 @@
             // 
             // numLimiCred
             // 
-            this.numLimiCred.Location = new System.Drawing.Point(153, 192);
+            this.numLimiCred.Location = new System.Drawing.Point(149, 215);
             this.numLimiCred.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -166,43 +166,44 @@
             this.numLimiCred.TabIndex = 11;
             this.numLimiCred.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblSaldoComLimi
+            // lblSaldoComLimite
             // 
-            this.lblSaldoComLimi.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblSaldoComLimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoComLimi.Location = new System.Drawing.Point(468, 145);
-            this.lblSaldoComLimi.Name = "lblSaldoComLimi";
-            this.lblSaldoComLimi.Size = new System.Drawing.Size(177, 39);
-            this.lblSaldoComLimi.TabIndex = 13;
-            this.lblSaldoComLimi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSaldoComLimite.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSaldoComLimite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoComLimite.Location = new System.Drawing.Point(308, 40);
+            this.lblSaldoComLimite.Name = "lblSaldoComLimite";
+            this.lblSaldoComLimite.Size = new System.Drawing.Size(177, 39);
+            this.lblSaldoComLimite.TabIndex = 13;
+            this.lblSaldoComLimite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(334, 154);
+            this.label5.Location = new System.Drawing.Point(308, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 20);
+            this.label5.Size = new System.Drawing.Size(129, 20);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Saldo com limite:";
+            this.label5.Text = "SaldoComLimite:";
             // 
-            // button1
+            // btnDepositarLimite
             // 
-            this.button1.Location = new System.Drawing.Point(315, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 39);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Depositar limite";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDepositarLimite.Location = new System.Drawing.Point(342, 209);
+            this.btnDepositarLimite.Name = "btnDepositarLimite";
+            this.btnDepositarLimite.Size = new System.Drawing.Size(107, 39);
+            this.btnDepositarLimite.TabIndex = 14;
+            this.btnDepositarLimite.Text = "Depositar limite";
+            this.btnDepositarLimite.UseVisualStyleBackColor = true;
+            this.btnDepositarLimite.Click += new System.EventHandler(this.btnDepositarLimite_Click_1);
             // 
             // FrmCaixaEletronico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(701, 308);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblSaldoComLimi);
+            this.ClientSize = new System.Drawing.Size(507, 351);
+            this.Controls.Add(this.btnDepositarLimite);
+            this.Controls.Add(this.lblSaldoComLimite);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numLimiCred);
             this.Controls.Add(this.label3);
@@ -238,9 +239,9 @@
         private System.Windows.Forms.NumericUpDown numValorDeposito;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numLimiCred;
-        private System.Windows.Forms.Label lblSaldoComLimi;
+        private System.Windows.Forms.Label lblSaldoComLimite;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDepositarLimite;
     }
 }
 
