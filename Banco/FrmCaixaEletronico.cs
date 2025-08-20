@@ -18,8 +18,8 @@ namespace Banco
         {
             InitializeComponent();
             conta = new Conta(); 
-            conta.Saldo = 5000;
-            conta.LimiteCredito1 = 1000;
+            conta.Saldo = 1500;
+            conta.LimiteCredito1 = 200;
             lblSaldo.Text = conta.Saldo.ToString("C");
             lblSaldoComLimite.Text = (conta.Saldo + conta.LimiteCredito1).ToString("C");
             numLimiCred.Value = conta.LimiteCredito1;
