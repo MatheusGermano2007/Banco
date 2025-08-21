@@ -23,5 +23,10 @@ namespace Banco
             frmCaixa.Show();
             this.Hide();
         }
+
+        private void btnSairInicio_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
